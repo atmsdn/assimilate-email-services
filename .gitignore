@@ -4,4 +4,10 @@ jspm_packages
 
 # Serverless directories
 .serverless
-.env
+
+# esbuild directories
+.esbuild
+.webpack
+output
+.zip
+layers/node_modules.zip
