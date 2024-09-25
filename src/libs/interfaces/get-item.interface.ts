@@ -1,5 +1,5 @@
 export interface GetItem {
-    PK: string,
+    ID: string,
     SK: string
 }
 

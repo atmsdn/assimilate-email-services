@@ -1,16 +1,17 @@
 export interface OrgCreate {
-    PK: string,
+    PK: string;
+    ID: string,
     SK: string,
     Name: string,
-    Domain: string,
     Email: string,
     MobileNo: string,
     Address: Address,
-    VillageName: string,
     isActive: string,
-    UPIId: string;
     RoleId?: number;
+    OrganizationCode?: any;
+    ApiKey?: string;
 }
+
 export interface Address {
     AddressLine1: string;
     AddressLine2: string;
@@ -19,18 +20,29 @@ export interface Address {
     PinCode: number;
 }
 export interface GetItem {
-    PK: string,
+    ID: string,
     SK: string
 }
 
 
-export interface UserCreate {
-    PK: string,
-    SK: string,
-    RoleId: number,
-    Email: string,
-    Password: string
-}
+// export interface UserCreate {
+//     ID: string,
+//     SK: string,
+//     RoleId: number,
+//     Email: string,
+//     Password: string
+// }
+
+export type UserItem = {
+    ID: string;
+    SK: string;
+    Email: string;
+    RoleId: number;
+    Password: string;
+    entity?: string;    // optional
+    created?: Date;     // optional
+    modified?: Date;    // optional
+};
 export interface Orgquery {
     model: any,
     pk: string;

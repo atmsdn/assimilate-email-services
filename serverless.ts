@@ -2,6 +2,7 @@ import type { AWS } from '@serverless/typescript';
 import permissions from 'serverless/permissions';
 import { login } from '@functions/login';
 import { excludePackage } from 'serverless/packages';
+import { organization } from '@functions/organization';
 
 const serverlessConfiguration: AWS = {
     useDotenv: true,
@@ -62,7 +63,8 @@ const serverlessConfiguration: AWS = {
     },
     // import the function via paths
     functions: {
-        ...login
+        ...login,
+        ...organization
     },
     package: { individually: true }
 };

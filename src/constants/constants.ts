@@ -1,8 +1,8 @@
 const GRAMPANCHAYAT_COLLECT_TABLE: any = `at-email-service-${process.env.STAGE}`;
-const SK_CREATED_AT_INDEX = "SK-CreatedAt-index";
+const SK_CREATED_AT = "SK-created";
 
 
-const Organization_Sk = "Organization";
+const ORGANIZATION = "Organization";
 const CITIZEN = "Citizen";
 const TRANSACTION = "Transaction";
 const COMPLAINT = "Complaint";
@@ -17,8 +17,8 @@ const ADMIN_ROLE = 2;
 export {
    GRAMPANCHAYAT_COLLECT_TABLE,
    ADMIN_ROLE,
-   Organization_Sk,
-   SK_CREATED_AT_INDEX,
+   ORGANIZATION,
+   SK_CREATED_AT,
    Employee_Sk,
    CITIZEN,
    CITIZEN_SK,

@@ -4,13 +4,14 @@ import { middyfyAuth } from '@libs/lambda';
 import { getUserById } from './login.service';
 import jwt from 'jsonwebtoken';
 import { JWT_KEY } from '@constants/env';
+
 const signIn = middyfyAuth(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     try {
         // @ts-ignore
         const obj: { userName: string, password: string } = event.body;
         console.log(event.headers, 'header');
         if (obj.userName && obj.password) {
-            const { Item } = await getUserById({ PK: "User#" + obj.userName, SK: "Organization#" + event.headers.application });
+            const { Item } = await getUserById({ ID: "User#" + obj.userName, SK: "Organization#" + event.headers.application });
             console.log(Item, 'Item');
 
             if (Item) {
