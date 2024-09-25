@@ -7,7 +7,7 @@ const marshallOptions = {
     // Whether to automatically convert empty strings, blobs, and sets to `null`.
     convertEmptyValues: false, // if not false explicitly, we set it to true.
     // Whether to remove undefined values while marshalling.
-    removeUndefinedValues: false, // false, by default.
+    removeUndefinedValues: true, // false, by default.
     // Whether to convert typeof object to map attribute.
     convertClassInstanceToMap: false, // false, by default.
 }
@@ -21,14 +21,25 @@ const unmarshallOptions = {
 const translateConfig = { marshallOptions, unmarshallOptions }
 
 // Instantiate a DocumentClient
-export const DocumentClient = DynamoDBDocumentClient.from(new DynamoDBClient({}), translateConfig)
+export const documentClient = DynamoDBDocumentClient.from(new DynamoDBClient({}), translateConfig)
 // Instantiate a table
 export const TableCollect = new Table({
     name: GRAMPANCHAYAT_COLLECT_TABLE,
-    partitionKey: 'PK',
-    sortKey: 'SK',
-    DocumentClient,
+    partitionKey: {
+        name: "ID",
+        type: "string",
+    },
+    sortKey: {
+        name: "SK",
+        type: "string",
+    },
+    documentClient,
     indexes: {
-        'SK-CreatedAt-index': { partitionKey: 'SK', sortKey: 'CreatedAt' }
+        "SK-created": {
+            type: 'global',
+            partitionKey: { name: 'SK', type: 'string' },
+            sortKey: { name: 'CreatedAt', type: 'number' },
+        }
     }
 });
+
