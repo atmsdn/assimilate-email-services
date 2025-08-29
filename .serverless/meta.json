@@ -1,0 +1,27 @@
+{
+  "unknown": {
+    "versionFramework": "4.18.2",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "command": [
+      "login"
+    ],
+    "options": {},
+    "orgId": "e106fab9-dd35-4779-90c3-bbefe79ff832",
+    "orgName": "relife",
+    "userId": "F2t11B00m95SgzWhbk",
+    "userName": "assimilatesr",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}
